@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Requests</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel="stylesheet" href="./style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/display/placeholder.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- <div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <ul>
+        <li><a href="#!"><i class="material-icons">menu</i></a></li>
+        <li><a class="title" href="#!">Dashboard</a></li>
+      </ul>
+      <ul class="right">
+        <li><a href="#!"><i class="material-icons">apps</i></a></li>
+        <li><a href="#!"><i class="material-icons">settings</i></a></li>
+        <li><a href="#!"><i class="material-icons">help</i></a></li>
+      </ul>
+    </div>
+  </nav>
+</div> -->
+<ul class="side-nav fixed transparent z-depth-0">
+  <li><a href="./"><i class="material-icons">dashboard</i>Dashboard</a></li>
+  <li class="active"><a href="requests.html"><i class="material-icons">code</i>Requests</a></li>
+  <li><a href="/"><i class="material-icons">search</i>Search packages</a></li>
+  <li>
+    <div class="divider"></div>
+  </li>
+  <li><a href="https://s4ymf7949hzgz4mfb9bhq2ntfgl2-ojdof.toggled.tech/"><i class="material-icons">book_2</i>Documentation</a></li>
+</ul>
+<div class="main">
+  <div class="container-fluid">
+    <!-- <div class="row">
+      <div class="col s12 m4">
+        <div class="card blue white-text">
+          <div class="card-content valign-wrapper">
+            <div class="card-text">
+              <h6>25%</h6>
+              <p>Server load</p>
+            </div>
+            <div class="card-icon"><i class="material-icons medium valign">pie_chart</i></div>
+          </div>
+          <div class="card-action"><a href="#">View report</a></div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card blue white-text">
+          <div class="card-content valign-wrapper">
+            <div class="card-text">
+              <h6>156</h6>
+              <p>Users online</p>
+            </div>
+            <div class="card-icon"><i class="material-icons medium valign">check_circle</i></div>
+          </div>
+          <div class="card-action"><a href="#">View report</a></div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card blue white-text">
+          <div class="card-content valign-wrapper">
+            <div class="card-text">
+              <h6>50</h6>
+              <p>Broken links</p>
+            </div>
+            <div class="card-icon"><i class="material-icons medium valign">build</i></div>
+          </div>
+          <div class="card-action"><a href="#">View report</a></div>
+        </div>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col s12 m8">
+        <div class="card">
+          <table class="bordered highlight">
+            <thead>
+              <tr>
+                <th colspan="2">Your Requests</th>
+                <th style="font-size: 13px; float: right; cursor:pointer;" onclick="newReq()"><i class="material-icons">add</i></th>
+              </tr>
+            </thead>
+            <tbody>
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<div id="fullscreen-popup" class="fullscreen-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+  <div class="popup-content" style="background-color: white; padding: 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); height: 100%; overflow: scroll;">
+    <span class="close-btn" style="float: right; cursor: pointer; font-size: 18px;" onclick="document.getElementById('fullscreen-popup').style.display = 'none';">&times;</span>
+    <h3 style="font-size: 30px;">Create A Request</h3>
+    <!-- <p>This is an example of a full screen popup.</p> -->
+    <!-- Add more content here -->
+    
+    <form id="request-form" style="margin-top: 20px;">
+      <div class="input-field">
+        <input id="request_url" type="text" class="validate" required>
+        <label for="request_url">Request URL</label>
+      </div>
+      <div class="input-field">
+        <input id="allowed_url" type="text" class="validate" required>
+        <label for="allowed_url">Allowed Origin</label>
+      </div>
+      <label for="req_headers">Request Body (JSON)</label>
+      <div class="input-field">
+        <textarea id="req_body" class="materialize-textarea"></textarea>
+        <!-- <label for="req_body">Request Body (JSON)</label> -->
+      </div>
+      <label for="req_headers">Request Headers (JSON)</label>
+      <div class="input-field">
+        <textarea id="req_headers" class="materialize-textarea"></textarea>
+        
+      </div>
+      <br>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <p>For get requests leave the body and headers blank.</p>
+    </form>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js'></script>
+  <script src="req.js"></script>
+</body>
+</html>

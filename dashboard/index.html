@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel="stylesheet" href="./style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDzJe3M-hjERgAx5U8bHfV-dBK2QFQJZ_g",
+      authDomain: "carbon-host.firebaseapp.com",
+      projectId: "carbon-host",
+      storageBucket: "carbon-host.appspot.com",
+      messagingSenderId: "769351599940",
+      appId: "1:769351599940:web:6bf6136946685026a4b911",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore();
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/v8/firebase.User
+        var uid = user.uid;
+        console.log(user)
+      } else {
+        // User is signed out
+        // ...
+        window.location="/auth"
+      }
+    });
+  </script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<ul class="side-nav fixed transparent z-depth-0">
+  <li class="active"><a href="#"><i class="material-icons">dashboard</i>Dashboard</a></li>
+  <li><a href="requests.html"><i class="material-icons">code</i>Requests</a></li>
+  <li><a href="/"><i class="material-icons">search</i>Search packages</a></li>
+  <li>
+    <div class="divider"></div>
+  </li>
+  <!-- <li><a href="#"><i class="material-icons">settings</i>Settings</a></li> -->
+  <li><a href="https://s4ymf7949hzgz4mfb9bhq2ntfgl2-ojdof.toggled.tech/"><i class="material-icons">book_2</i>Documentation</a></li>
+</ul>
+<div class="main">
+  <div class="container-fluid">
+    There is nothing to see here.
+    <!-- <div class="row">
+      <div class="col s12 m4">
+        <div class="card blue white-text">
+          <div class="card-content valign-wrapper">
+            <div class="card-text">
+              <h6>25%</h6>
+              <p>Server load</p>
+            </div>
+            <div class="card-icon"><i class="material-icons medium valign">pie_chart</i></div>
+          </div>
+          <div class="card-action"><a href="#">View report</a></div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card blue white-text">
+          <div class="card-content valign-wrapper">
+            <div class="card-text">
+              <h6>156</h6>
+              <p>Users online</p>
+            </div>
+            <div class="card-icon"><i class="material-icons medium valign">check_circle</i></div>
+          </div>
+          <div class="card-action"><a href="#">View report</a></div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card blue white-text">
+          <div class="card-content valign-wrapper">
+            <div class="card-text">
+              <h6>50</h6>
+              <p>Broken links</p>
+            </div>
+            <div class="card-icon"><i class="material-icons medium valign">build</i></div>
+          </div>
+          <div class="card-action"><a href="#">View report</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m8">
+        <div class="card">
+          <table class="bordered highlight">
+            <thead>
+              <tr>
+                <th colspan="2">TODO List</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Upgrade to SSD harddisks</td>
+              </tr>
+              <tr>
+                <td>Pay server invoice</td>
+              </tr>
+              <tr>
+                <td>Upgrade to SSD harddisks</td>
+              </tr>
+              <tr>
+                <td>Pay server invoice</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js'></script>
+</body>
+</html>

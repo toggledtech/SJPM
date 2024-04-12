@@ -1,0 +1,724 @@
+/* LANDING PAGE CSS */
+/* COPYRIGHT © 2024 Toggled.tech */
+/* LICENSE: ZYMONO */
+
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Nunito:wght@300&display=swap');
+/* IMPORTS END */
+
+*::selection {
+    color: rgba(160,112,199,.875);
+}
+
+body {
+  background-color: black;
+  /* font-family: 'Nunito', sans-serif; */
+  font-family: 'Inter', sans-serif;
+  color: #DEDEDE;
+  /* transition: 0.2s ease; */
+}
+
+#home, #kickstart {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  height: 90vh; /* Set the height to 100% of the viewport height */
+  /* background: url("/assets/images/home-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position-y: -7rem; */
+}
+
+#kickstart { text-align: center; height: 60vh; }
+
+#home > div {
+  flex: 0 0 35%; /* Set both columns to 40% width */
+  margin: 0 10px; /* Adjust margin between columns as needed */
+}
+
+#kickstart > div {
+  flex: 0 0 40%; /* Set both columns to 40% width */
+  margin: 0 10px; /* Adjust margin between columns as needed */
+}
+
+#legal {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  width: 100%;
+}
+
+#legal > div {
+  flex: 0 0 60%; /* Set both columns to 40% width */
+  /* margin: 0 10px; Adjust margin between columns as needed  */
+}
+
+
+.content {
+  display: block;
+}
+
+#home h1, #kickstart h1 {
+  text-shadow: -1px -1px 0 hsla(0, 0%, 100%, 0.23), 1px 1px 0 rgba(0, 0, 0, 0);
+  background: linear-gradient(to left bottom, #DEDEDE 30%, hsla(0, 29%, 100%, 0.5));
+
+  /* WEBKITS */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.4px #ffffff80;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: unset;
+  font-size: 72px;
+  margin: 0;
+  font-weight: 400;
+}
+
+#kickstart h1 {
+  font-size: 60px;
+}
+
+.text-left p {
+  color: rgba(239, 245, 255, 0.694);
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.toggled-button-array {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Set the height to 100% of the viewport height */
+}
+
+.toggled-button-array-kick {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  height: 100%; /* Set the height to 100% of the viewport height */
+}
+
+.toggled-btn {
+  color: black;
+  background-color: white;
+  padding: 10px 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: 0.2s ease;
+  display: inline;
+  cursor: pointer;
+}
+
+.toggled-btn:hover {
+  background-color: #DEDEDE;
+  color: black;
+}
+
+.toggled-input {
+  color: black;
+  background-color: white;
+  padding: 10px 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: 0.2s ease;
+  display: inline;
+  /* cursor: pointer; */
+}
+
+.no-bd {
+  border: none !important;
+}
+
+.link {
+  color: #c2c2c2;
+  font-size: 18px;
+  background: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+
+.link:hover {
+  /* background: rgba(0, 0, 0, 0.5); */
+  color: #DEDEDE;
+}
+
+section {
+  /* margin-left: 10%; */
+  width: 100%;
+}
+
+.video {
+  width: 30vw;
+  transform: scaleX(-1);
+}
+
+.center {
+  text-align: center;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #4a4a4a;
+}
+
+h4 {
+  margin: 0;
+  margin-top: 50px;
+}
+/* BENTO GRID */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.bento {
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+.bento-row {
+  display: inline-block;
+  display: flex; /* Use flexbox to arrange buttons in a row */
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.top .bento-box:first-child {
+  border-top-left-radius: 50px;
+}
+
+.top .bento-box:last-child {
+  border-top-right-radius: 50px;
+}
+
+.bottom .bento-box:first-child {
+  border-bottom-left-radius: 50px;
+}
+
+.bottom .bento-box:last-child {
+  border-bottom-right-radius: 50px;
+}
+
+.bento-row .bento-box {
+  flex: 1; /* Distribute the available space equally among the buttons */
+  width: 100%; /* Make each button take up the full width */
+  padding: 10px;
+  display: inline-block;
+  /* background-color: rgba(28, 28, 28, 0.5);  */
+  background: none;
+  border: 1px solid #2b2b2b;
+  margin: 3px;
+  border-radius: 5px;
+  height: 320px;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  transition: 0.2s ease;
+}
+
+/* .bento-row .bento-box:hover {
+  border: 1px solid #ededed;
+} */
+
+iframe {
+  border: none;
+  outline: none;
+}
+
+.c {
+  position: relative;
+}
+
+.bento-box-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* CARD SELECTOR */
+.card {
+  background: rgba(11,17,33,0.8);
+  border: 1px solid #293445;
+  border-radius: 25px;
+  width: 100%;
+  height: 600px;
+  transition: 0.2s ease;
+}
+
+.card-selector {
+  margin-top: 4%;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: rgba(28, 28, 28, 0.5); /* 0.5 represents 50% transparency */
+  width: 60%;
+  border: 1px solid #474747;
+}
+
+.card-selector .buttons {
+  display: inline-block;
+  padding: 4px;
+  display: flex; /* Use flexbox to arrange buttons in a row */
+  height: 100%; /* Set height of .buttons to 100% */
+}
+
+.card-selector button {
+  display: inline-block;
+  flex: 1; /* Distribute the available space equally among the buttons */
+  padding: 8px;
+  width: 100%; /* Make each button take up the full width */
+  background: none;
+  height: 100%;
+  font-size: 18px;
+  border: none;
+  color: #c2c2c2;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.card-selector button:hover {
+  color: white;
+}
+
+.card-selector .selected {
+  display: inline-block;
+  flex: 1; /* Distribute the available space equally among the buttons */
+  padding: 8px;
+  width: 100%; /* Make each button take up the full width */
+  background-color: rgba(71, 71, 71, 0.5); /* 0.5 represents 50% transparency */
+  height: 100%;
+  font-size: 18px;
+  border: none;
+  color: #c2c2c2;
+  border-radius: 10px;
+}
+
+/* Select the first button within .buttons */
+.card-selector .buttons button:first-child {
+  /* Your styles for the first button */
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-right: 5px;
+}
+
+/* Select the last button within .buttons */
+.card-selector .buttons button:last-child {
+  /* Your styles for the last button */
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 5px;
+}
+
+/* FOOTER */
+footer {
+  height: 50vh;
+  border-top-color: rgb(26, 26, 26);
+  border-top: 1px solid rgb(26, 26, 26);
+  color: #757575;
+}
+
+.footer-overlay {
+  background-image: conic-gradient(from 90deg at 50% 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(rgba(200, 200, 200, 0.1) 0%, rgba(0, 0, 0, 0) 80%);
+
+  position: absolute;
+  top: -1;
+  left: 50%;
+  height: 300px;
+  width: 70%;
+  user-select: none;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-50%);
+  margin-top: 1;
+  /* padding-top: 50%; */
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-around; /* Center and equally space child elements */
+  align-items: center; /* Center vertically */
+  /* Additional styles for the footer if needed */
+}
+
+.footer-column {
+  height: 60%
+}
+
+footer > div {
+  /* Adjust margin or padding between columns as needed */
+  margin: 0 10px;
+}
+
+footer .title {
+  color: #DEDEDE;
+}
+
+footer a {
+  text-decoration: none;
+  color: #757575;
+  transition: 0.2s ease;
+  display: block;
+}
+
+footer a:hover {
+  color: #DEDEDE;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-around; /* Center and equally space child elements */
+  align-items: center; /* Center vertically */
+  width: 100%;
+  height: 10vh;
+}
+
+header > div {
+  /* Adjust margin or padding between columns as needed */
+  margin: 0 20px;
+}
+
+header a {
+  color: #8f8f8f;
+  text-decoration: none;
+  transition: 0.2s ease;
+  margin: 0 10px;
+  font-weight: 600;
+  /* display: block; */
+}
+
+header a:hover {
+  color: #DEDEDE;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.pricing-cards .pcard {
+  text-align: left;
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 15px;
+  width: calc(20% - 1rem);
+  margin: 0.5rem;
+  padding: 1rem;
+  color: #DEDEDE;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  max-width: 220px;
+}
+
+.pricing-cards .pcard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.pricing-cards h3 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.pricing-cards p {
+  font-size: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-cards ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pricing-cards ul li {
+  margin-bottom: 0.5rem;
+}
+
+.pricing-cards button {
+  width: 100%;
+}
+
+/* .pricing-cards button:hover {
+  background-color: #ed8687;
+} */
+
+#vid1 {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  footer {
+    overflow-x: hidden;
+  }
+
+  #home {
+    display: block;
+    text-align: center;
+  }
+
+  #home h1 {
+    font-size: 60px;
+  }
+
+  #home p {
+    font-size: 16px;
+    line-height: unset;
+  }
+
+  .toggled-button-array {
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .toggled-button-array a {
+    width: 100%
+  }
+
+  .tg-head-side {
+    display: none;
+  }
+
+  .video {
+    width: 60vw;
+  }
+
+  .scroll {
+    display: none;
+  }
+
+  .bento-row {
+    width: 100%;
+    margin: 0;
+  }
+
+  .bento-box-content p, .no-mobile {
+    display: none;
+  }
+
+  .bento-middle, .chat {
+    display: none !important;
+  }
+
+  #kickstart h1 {
+    font-size: 40px;
+    max-width: 100%;
+    width: 80vw;
+  }
+
+  #kickstart {
+    width: 100%;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .pricing-cards .pcard {
+    width: calc(100% - 1rem);
+  }
+
+  .code-box {
+    display: none;
+  }
+}
+
+/* .language-js {
+  text-align: center;
+  width: 30%
+}
+
+#code {
+  display: relative;
+  left: 50%;
+  transform: translateX(-50%);
+} */
+.forms {
+  margin-top: 4% !important;
+}
+/* .code-box{
+  margin-bottom:10% !important;
+} */
+
+~source footer {
+  src: '/fibercomponents/footer.html'
+}
+
+~source header {
+  src: '/fibercomponents/header.html'
+}
+
+.address {
+  text-wrap: 100px;
+}
+
+/* LIGHT MODE */
+body.light-mode {
+  background-color: #f5f5f5; /* Set light background color */
+  color: #333; /* Set light text color */
+}
+
+/* Update other elements with light mode styles as needed */
+body.light-mode #home h1,
+body.light-mode #kickstart h1 {
+  background: linear-gradient(to left bottom, #333 90%, hsla(0, 25%, 100%, 0.5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.4px #ffffff80;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.4px #ffffff80;
+}
+
+body.light-mode .toggled-btn {
+  color: white;
+  background-color: #333;
+}
+
+body.light-mode .toggled-btn:hover {
+  color: white;
+  background-color: #212121;
+}
+
+body.light-mode .link {
+  color: #555;
+}
+
+body.light-mode .link:hover {
+  color: #212121;
+}
+
+body.light-mode footer {
+  border-top-color: #eee;
+}
+
+body.light-mode footer .title {
+  color: #333;
+}
+
+body.light-mode header a {
+  color: #555;
+}
+
+body.light-mode .pricing-cards .pcard {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode.bento-row.bento-box.bento-box-content {
+  color: #DEDEDE;
+}
+
+body.light-mode .bento-row .bento-box {
+  /* Existing styles */
+  color: #DEDEDE; /* Set the text color to #DEDEDE only in light mode */
+}
+
+
+#developmentPopup {
+  display: none;
+  position: fixed;
+  width: calc(100% - 45px);
+  padding: 0;
+  /* margin: 0; */
+  /* height: 10%; */
+  background: #141414;
+  border: 1px solid #262626;
+  /* border-radius: 15px; */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: #DEDEDE;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  padding: 20px;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  /* left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+#developmentPopup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+/* #developmentPopup button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #141414;
+  border: 1px solid #262626;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+} */
+
+
+/* GRID EFFECT */
+/* body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+  background: hsl(0 0% 0%);
+  gap: 2rem;
+}
+
+body::before {
+  --line: hsl(0 0% 95% / 0.25);
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background:
+    linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin,
+    linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin;
+  mask: linear-gradient(-15deg, transparent 30%, white);
+  top: 0;
+  z-index: -1;
+} */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(26, 26, 26);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+  transition: 0.2s ease;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

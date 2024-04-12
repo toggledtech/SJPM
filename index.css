@@ -1,0 +1,18 @@
+body {
+  
+}
+header {
+ background-color: gray;
+  height: 50px;
+}
+nav {
+  font-size:1em;
+}
+}
+a {
+  text-decoration:none;
+}
+
+.right {
+  float: right;
+}
