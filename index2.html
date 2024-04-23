@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SJPM</title>
+    <link rel="icon" href="/images/sjpm.png">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore-compat.js"></script>
+  </head>
+  <body>
+    <header id="header" style="display: none;">
+
+	</header>
+	
+	<section id="section0">
+	<div class="container-test">
+		<!-- add logo, search bar and buttons (or links and style them as buttons later)        -->
+		<!-- <img class="npm-logo" src="./images/sj.png" alt="sjpm" /> -->
+		<div class="div-inline container">
+			<form id="search">
+        <div class="div-inline">
+          <input class="search-bar" type="text" placeholder="Search packages" id="search-bar" required />
+        </div>
+        <button class="search-button" type="submit" style="cursor:pointer;">Search</button>
+      </form>
+		</div>
+		<a href="/dashboard". class="join-button"> Dashboard </a>
+		<a href="https://s4ymf7949hzgz4mfb9bhq2ntfgl2-ojdof.toggled.tech/" class="login-button"> Docs </a>
+	</div>
+    </section>
+    
+    <!--Section 1 -->
+    <section id="section1">
+      <div class="test">  
+      <h1>Build With Packages in Static JS</h1>
+      <article>A revolutionary new way to interact with Static JS, basically replacing backend.</article>
+	  <div class="div-links">
+	  <a href="/dashboard/" target="_blank" class="section1-seeplans-link">Use For Free</a>
+      <!-- <a href="#" target="_blank" class="section1-joinforfree-link">Join for free</a> -->
+	  </div>
+      </div>
+      
+    </section>
+    
+    <!--Section 2 -->
+    <section id="section2">
+	  <img class="triangle-hexagon" src="./images/sjpm.png" />
+      <h2>Use SJPM in your next project</h2>
+      <p>SJPM is a new tool that implements packages into JS. It also allows you to send post and get requests to any API without exposing an API key.</p>
+    </section>
+    
+    <!--Section 3 -->
+    <section class="section3">
+      <div id="div1-section3">
+	  <div>
+        <!-- <img src="./images/zero-configuration.svg" alt="zero-configuration.svg" /> -->
+        <h3>Manage from the web</h3>
+        <p>Setup, edit and remove your packages, requests and more from our web dashboard.</p>
+      </div>
+      <div>
+        <!-- <img src="./images/team-management.svg" alt="team-management.svg" /> -->
+        <h3>Hidden</h3>
+        <p>Keep your API keys hidden by proxying requests through our backend. You can lock which domains can access requests and CORS isn't an issue.</p>
+      </div>
+      <div>
+        <!-- <img src="./images/familiar-features.svg" alt="familiar-features.svg" /> -->
+        <h3>Familiar features</h3>
+        <p>SJPM work similarly to the EJS modules that you're used to from Node.</p>
+      </div>
+      <!-- <div>
+        <img src="./images/npm-audit.svg" alt="npm-audit.svg" />
+        <h3>npm audit</h3>
+        <p>Enjoy the security auditing features built into the npm client, a zero-friction way to make open source software safer.</p>
+      </div> -->
+     </div>
+	 <div class="section3-button section3-align" >
+	 <a href="/dashboard" target="_blank">Get Started</a>
+	 </div>
+    </section>
+	<script src="script.js"></script>
+  </body>
+</html>
