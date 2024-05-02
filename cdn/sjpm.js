@@ -11,7 +11,7 @@ const loadScript = (project) => {
   document.body.appendChild(script)
 }
 
-const get = (project) => {
+const require = (project) => {
   try {
     const projectID = String(project).replaceAll('/', '_')
     const scripturl = `https://sjpm.vercel.app/api/v1/personal/${projectID}`
@@ -57,7 +57,26 @@ const requireNode = async (p) => {
     document.body.appendChild(script)
 }
 
-const require = get;
+const get = async (project) => {
+
+  try {
+    const projectID = project.replaceAll('/', '_')
+
+    return await fetch('https://sjpm.vercel.app/api/v1/get', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ project: projectID })
+    })
+  } catch (err) {
+    return err
+  }
+    // .then(response => response.json())
+    // .then(data => console.log(data))
+    // .catch(error => console.error('Error:', error));
+}
+
 
 export { get, loadScript, post, requireNode, require };
 
